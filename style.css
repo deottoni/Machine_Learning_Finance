@@ -1,0 +1,115 @@
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Lucida Sans';
+
+}
+
+.navbar-brand{
+    font-size: 50px;
+    padding: 5px;
+}
+
+.navbar-nav a{
+    padding: 10px;
+    margin: 5px 5px;
+    cursor: pointer;
+  }
+
+.box-single {
+    background-color: white;
+    overflow: scroll;
+    border-radius: 10px;
+    padding: 10px; 
+    margin: 20px 100px;
+}
+
+.box-left {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px; 
+    margin: 10px;
+}
+
+.box-right {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px; 
+    margin: 10px;
+}
+
+.box-left img{
+    float: left;
+    width: 400px;
+    height: 300px;
+}
+
+
+.side-img {
+    display: inline-block;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+}
+
+
+
+.img-comparison img{
+    display: inline-block;
+    padding: 5px;
+    width: 500px;
+    height: 400px;
+}
+
+
+.session-title  {
+    color: navy;
+    text-align: center;
+    padding: 10px;
+    margin-block-end: 25px; 
+}
+
+.session-subtitle {
+    color: darkgrey;
+    text-align: center;
+    margin-block-end: 50px;
+}
+
+.body p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+th, td {
+    border-bottom: 10px solid lightslategray;
+  }
+
+.page-footer p{
+    color: rgba(255,255,255,.5);
+    display: inline;
+}
+
+
+/* for md screen */
+@media only screen and (max-width: 768px) {
+    .side-img {
+        float: left;
+        width: 50%;
+    }
+    .img-comparison {
+        float: left;
+        width: 100%;
+    }
+  }
+  
+  /* for phone screen */
+  @media only screen and (max-width: 480px) {
+    .side-img {
+        float: left;
+        width: 100%;
+    }
+    .img-comparison {
+        float: left;
+        width: 100%;
+    }
+  }
