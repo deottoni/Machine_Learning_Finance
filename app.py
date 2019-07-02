@@ -2,6 +2,8 @@ import os
 
 import pandas as pd
 import numpy as np
+import requests
+import json
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -25,30 +27,67 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+my_data = []
+
+# @app.route("/data/<stock>")
+# def data(stock):
+#     todays_day = date.today() 
+
+#     start = datetime.datetime(2009, 1, 1)
+#     end = todays_day
+#     df = web.DataReader(f"{stock}", 'yahoo', start, end)
+#     df = df.drop(columns=["Open","High","Low","Adj Close","Volume"])
+
+
+
+#     data = {
+#         "date": df.Date.values.tolist(),
+#         "close": df.Close.values.tolist()
+#     }
+#     return jsonify(data)
+
 @app.route("/data")
-def data():
-    todays_day = date.today() 
+def symbol():
+    
+    stock = my_data[0]["symbol"]
+    # print(stock)
 
-    start = datetime.datetime(2009, 1, 1)
+    todays_day = date.today() 
+    start = datetime.datetime(2019, 1, 1)
     end = todays_day
-    df = web.DataReader(f"{stock}", 'yahoo', start, end)
+
+    df = web.DataReader(stock, 'yahoo', start, end)
+    df.reset_index(inplace=True)
     df = df.drop(columns=["Open","High","Low","Adj Close","Volume"])
-    return jsonify()
 
-@app.route("/send", methods=["GET","POST"])
-def stock():
-    todays_day = date.today() 
-    start = datetime.datetime(2009, 1, 1)
-    end = todays_day
+    data = {
+        "Date":df.Date.tolist(),
+        "Close": df.Close.values.tolist()
+    }
 
-    if request.method == "POST":
-        stock = request.form["ticker"]
-        print(stock)
+    return jsonify(data)
 
-        df = web.DataReader(f"{stock}", 'yahoo', start, end)
-        df = df.drop(columns=["Open","High","Low","Adj Close","Volume"])
 
-    return jsonify(df)
+# @app.route("/rawdata")
+# def data():
+#     print(my_data)
+#     print(my_data[0]["symbol"])
+#     return jsonify(my_data)
+
+@app.route('/send', methods=['GET','POST'])
+def my_form_post():
+    if request.method == 'POST':
+
+        text1 = request.form['symbol']
+        print(text1)
+
+        data = {
+            "symbol":text1
+        }
+        my_data.append(data)
+
+        return "thankyou"
+    return render_template("index.html")
 
 
 
