@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+<!-- nav bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">Financial Predictions</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,35 +33,40 @@
 
 
     
-    <!-- first row to explain project -->
+    <!-- Description of project and group intro -->
+    <div id="container">
     <div class="row">
-        <div class="col-md-4">
-            <div class="box box-left">
-                <h1 class="session-title">
-                    Add image
-                </h1>
-                <img src="/images/stock.jpg" alt="stock_image" height="400px" width="600px">
-
+        <div class="col-md-6">
+            <div class="box box-left generic-image">
+                <img src="../images/stock.jpg" alt="stock_image">
             </div>
 
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="box box-right">
                 <h1 class="session-title">
-                    Project Reasoning                    
+                    Project Description                    
                 </h1>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas ab accusantium perferendis laboriosam corrupti cupiditate? Ab nihil praesentium rem facere dolorem officiis ipsum, quo perspiciatis, excepturi suscipit modi natus quisquam.
-                </p>
+                <h3><br>The Group</h3>
+                    <p>                    
+                        This is a project by group Fab5, and the members are Agustin, Godwin, Andry, Murtadha, and Andre.
+                    </p>
+                <h3>The Project</h3>
+                    <p>
+                        We've used a few Machine Learning models(LSTM, Random Forest, Arima) 
+                        to try to understand which is the best approach to predict stocks. <br>
+                        The way we used to calculate which model is the best fit for predicting stocks is by 
+                        calculating the Mean Squared Error (MSE).
+                    </p>
 
             </div>
         </div>
     </div>
 
 
-
+    <!-- Explaining the findings of our project -->
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="box box-left">
                 <h1 class="session-title">
                     Findings
@@ -72,20 +77,18 @@
             </div>
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="box box-right">
-                <h1 class="session-title">
-                    Add image
-                </h1>
-                <img src="/images/prediction.png" alt="prediction_image" height="400px" width="600px">
-
-
+                <img src="../images/prediction.png" alt="prediction_image" height="400px" width="600px">
             </div>
         </div>
     </div>
 
+
+    <!-- Section where we grab user input and change images accordingly-->
+    <div class="outputs">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
                 <div class="box box-single">
                 <form method="POST" action="/send">
                     <label for="input"> Please enter Ticker</label>
@@ -96,22 +99,46 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-images arima">
+                <img src="../images/image1.jpg" alt="arima_image">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-images rf">
+                <img src="../images/image2.jpg" alt="RF_image">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-images lstm">
+                <img src="../images/image3.jpg" alt="LSTM_image">
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end of outputs -->
 
+    </div> 
+    <!-- end of container -->
 
+    <!-- footer -->
 
-    <!-- <footer class="page-footer bg-dark fixed-bottom">
-
+    <footer class="page-footer bg-dark">
 
         <div class="footer-copyright text-center py-3">
             <p>
                 © 2019 Copyright:
             </p>
-            <a href="https://github.com/deottoni/Weather_Visualization_Dashboard">
-                <img src="Resources/assets/images/Octocat.png" alt="github_logo" height="30px" width="30px">
+            <a href="https://github.com/deottoni/Machine_Learning_Finance">
+                <img src="../images/GitHub-Logo.png" alt="github_logo" height="30px" width="30px">
             </a>
         </div>
-        
-    </footer> -->
+    </footer>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

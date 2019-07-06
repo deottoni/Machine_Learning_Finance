@@ -29,27 +29,12 @@ def index():
 
 my_data = []
 
-# @app.route("/data/<stock>")
-# def data(stock):
-#     todays_day = date.today() 
-
-#     start = datetime.datetime(2009, 1, 1)
-#     end = todays_day
-#     df = web.DataReader(f"{stock}", 'yahoo', start, end)
-#     df = df.drop(columns=["Open","High","Low","Adj Close","Volume"])
-
-
-
-#     data = {
-#         "date": df.Date.values.tolist(),
-#         "close": df.Close.values.tolist()
-#     }
-#     return jsonify(data)
 
 @app.route("/data")
 def symbol():
     
     stock = my_data[0]["symbol"]
+
     # print(stock)
 
     todays_day = date.today() 
@@ -68,25 +53,19 @@ def symbol():
     return jsonify(data)
 
 
-# @app.route("/rawdata")
-# def data():
-#     print(my_data)
-#     print(my_data[0]["symbol"])
-#     return jsonify(my_data)
-
 @app.route('/send', methods=['GET','POST'])
 def my_form_post():
     if request.method == 'POST':
 
-        text1 = request.form['symbol']
-        print(text1)
-
+        stock = request.form['symbol']
+        print(stock)
+ 
         data = {
-            "symbol":text1
+            "symbol":text
         }
         my_data.append(data)
 
-        return "thankyou"
+        return "Thank You"
     return render_template("index.html")
 
 
