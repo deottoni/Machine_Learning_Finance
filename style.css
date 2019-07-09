@@ -28,8 +28,29 @@ body {
     margin: 20px 100px;
 }
 
+.box-images {
+    /* background-color: white; */
+    overflow: scroll;
+    border-radius: 10px;
+    padding: 10px; 
+    margin: 20px 100px;
+}
+
+.box-images img{
+    width: 75%
+}
+
+.actual img{
+    width: 75%
+}
+
 img {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
     margin-left: auto;
     margin-right: auto;
 }

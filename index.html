@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+    <title>Financial Analysis</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+</head>
+
+<body>
+<!-- nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Financial Predictions</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="comparison.html">Comparisons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Data</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+    
+    <!-- Description of project and group intro -->
+    <div id="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-left generic-image">
+                <img src="images/Arima_example.png" alt="stock_image">
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="box box-right">
+                <h1 class="session-title">
+                    Project Description                    
+                </h1>
+                <h3><br>The Group</h3>
+                    <p>                    
+                        This is a project by group Fab5, and the members are Agustin, Godwin, Andry, Murtadha, and Andre.
+                    </p>
+                <h3>The Project</h3>
+                    <p>
+                        We've used a few Machine Learning models(LSTM, Random Forest, Arima, Prophet) 
+                        to try to understand which is the best approach to predict stocks. <br>
+                        The way we used to calculate which model is the best fit for predicting stocks is by 
+                        calculating the Mean Squared Error (MSE).
+                    </p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Explaining the findings of our project -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-left">
+                <h1 class="session-title">
+                    Findings
+                </h1>
+                <h3><br>The Best Model</h3>
+                <p>                    
+                    According to the MSE numbers, Random Forest is the most accurate model to predict a stock closing. 
+                    See the image to the right with the MSE scores for each model.
+                </p>
+                <h3>The Output</h3>
+                <p>
+                    Our product takes a user input, and it returns the Adjusted Close value of each model 
+                    comparing against the actual. <br>
+                    We also predict the next year of that stock. See an example below.
+                </p>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="box box-right">
+                <img src="images/prediction.png" alt="prediction_image" height="400px" width="600px">
+            </div>
+        </div>
+    </div>
+    <!-- section to change graph with the actual numbers of stock -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-images actual-img">
+                <img src="images/APPL_actual.png" alt="AAPL_LSTM_img">
+            </div>
+    </div>
+    </div>
+
+
+    <!-- Section where we grab user input and change images accordingly-->
+    <div class="outputs">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-single">
+                    <form>
+                        <div class="form-group">
+                            <label for="symbol-input"> Please Enter Ticker Symbol</label>
+                            <br>
+                            <input id="symbol-input" name="symbol-form" type="text" placeholder="AAPL">
+                            <button id="submit" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-images lstm lstm-img">
+                    <img src="images/AAPL_LSTM_img.png" alt="AAPL_LSTM_img">
+                </div>
+                <div class="box box-images rf rf-img">
+                    <img src="images/AAPL_RF_img.png" alt="AAPL_RF_img">
+                </div>
+                <div class="box box-images arima arima-img">
+                    <img src="images/AAPL_ARIMA_img.png" alt="AAPL_ARIMA_img">
+                </div>
+                <div class="box box-images prophet prophet-img">
+                    <img src="images/AAPL_PROPHET_img.png" alt="AAPL_PROPHET_img">
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- end of outputs -->
+
+    </div> 
+    <!-- end of container -->
+
+    <!-- footer -->
+
+    <footer class="page-footer bg-dark">
+
+        <div class="footer-copyright text-center py-3">
+            <p>
+                © 2019 Copyright:
+            </p>
+            <a href="https://github.com/deottoni/Machine_Learning_Finance">
+                <img src="images/GitHub-Logo.png" alt="github_logo" height="30px" width="30px">
+            </a>
+        </div>
+    </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="static/app.js"></script>
+</body>
+
+</html>
