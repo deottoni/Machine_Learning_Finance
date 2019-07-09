@@ -20,38 +20,51 @@ body {
     margin: 40px;
 }
 
-.box-single {
+.box-form {
     background-color: white;
-    overflow: scroll;
     border-radius: 10px;
     padding: 10px; 
     margin: 20px 100px;
 }
 
+.session-predictions {
+    text-align: center;
+}
+
 .box-images {
-    /* background-color: white; */
-    overflow: scroll;
+    /* overflow: scroll; */
     border-radius: 10px;
     padding: 10px; 
     margin: 20px 100px;
 }
 
 .box-images img{
-    width: 75%
-}
-
-.actual img{
-    width: 75%
-}
-
-img {
+    width: 75%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+.actual img{
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 .form-group {
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+
+.footer-copyright p{
+    color: white;
 }
 

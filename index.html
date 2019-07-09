@@ -56,7 +56,7 @@
                     </p>
                 <h3>The Project</h3>
                     <p>
-                        We've used a few Machine Learning models(LSTM, Random Forest, Arima, Prophet) 
+                        We've used a few Machine Learning models(LSTM, Arima, Prophet) 
                         to try to understand which is the best approach to predict stocks. <br>
                         The way we used to calculate which model is the best fit for predicting stocks is by 
                         calculating the Mean Squared Error (MSE).
@@ -81,9 +81,8 @@
                 </p>
                 <h3>The Output</h3>
                 <p>
-                    Our product takes a user input, and it returns the Adjusted Close value of each model 
-                    comparing against the actual. <br>
-                    We also predict the next year of that stock. See an example below.
+                    Our app takes the stock ticker as user input, and it returns the Adjusted Close value of each model. <br>
+                    We also show the actual Adjusted Close values from 2010 until today's date. See actual below.
                 </p>
             </div>
 
@@ -95,6 +94,20 @@
         </div>
     </div>
     <!-- section to change graph with the actual numbers of stock -->
+    <div class="row">
+            <div class="col-md-12">
+                <div class="session-predictions">
+                    <h1 class="session-predictions">
+                            Actual Stock Adjusted Closing (2010 - today)                    
+                    </h1>
+                    <p>
+                        See below the actual daily Adj Close values of each stock.
+                    </p>
+            </div>
+            </div>
+        </div>
+    
+    
     <div class="row">
         <div class="col-md-12">
             <div class="box box-images actual-img">
@@ -108,7 +121,7 @@
     <div class="outputs">
         <div class="row">
             <div class="col-md-12">
-                <div class="box box-single">
+                <div class="box box-form">
                     <form>
                         <div class="form-group">
                             <label for="symbol-input"> Please Enter Ticker Symbol</label>
@@ -123,12 +136,26 @@
 
         <div class="row">
             <div class="col-md-12">
+
+                <div class="session-predictions">
+                    <h1 class="session-predictions">
+                            Predictions                    
+                    </h1>
+                    <p>
+                        See below the predictions of the selected stock.
+                    </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
                 <div class="box box-images lstm lstm-img">
                     <img src="images/AAPL_LSTM_img.png" alt="AAPL_LSTM_img">
                 </div>
-                <div class="box box-images rf rf-img">
+                <!-- <div class="box box-images rf rf-img">
                     <img src="images/AAPL_RF_img.png" alt="AAPL_RF_img">
-                </div>
+                </div> -->
                 <div class="box box-images arima arima-img">
                     <img src="images/AAPL_ARIMA_img.png" alt="AAPL_ARIMA_img">
                 </div>
