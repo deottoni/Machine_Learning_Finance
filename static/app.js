@@ -23,7 +23,7 @@ function update_img(symbol) {
 
       const selectionProphet = d3.select(".prophet-img").select("img")
           .attr("src",`images/${symbol}_PROPHET_img.png` )
-          .attr("alt",`${symbol}__PROPHET_img_img`);
+          .attr("alt",`${symbol}__PROPHET_img`);
 
 }
 
